@@ -19,7 +19,7 @@ module.exports = {
 function getSeason(date) {
   if (!date) return 'Unable to determine the time of year!';
   if (!(date instanceof Date) 
-  || (+date.toString().split(' ')[3] != date.getFullYear())) 
+  || (+date.toString().split(' ')[3] != date.getFullYear()))
   throw new Error('Invalid date!');
 
   let month = date.getMonth();
