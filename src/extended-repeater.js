@@ -18,11 +18,11 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 function repeater(str, options) {
   let string = String(str);
-  let repeatTimes = options.repeatTimes == undefined ? 1 : options.repeatTimes;
-  let separator = options.separator === undefined ? '+' : options.separator;
-  let addition = options.addition === undefined ? '' : options.addition;
-  let additionRepeatTimes = options.additionRepeatTimes == undefined ? 1 : options.additionRepeatTimes;
-  let additionSeparator = options.additionSeparator === undefined ? '|' : options.additionSeparator;
+  let separator = (options.separator === undefined ? '+' : options.separator);
+  let addition = (options.addition === undefined ? '' : options.addition);
+  let additionSeparator = (options.additionSeparator === undefined ? '|' : options.additionSeparator);
+  let repeatTimes = (options.repeatTimes == undefined ? 1 : options.repeatTimes);
+  let additionRepeatTimes = (options.additionRepeatTimes == undefined ? 1 : options.additionRepeatTimes);
   let result = '';
 
   if (!repeatTimes) {
@@ -32,7 +32,7 @@ function repeater(str, options) {
   for (let i = 0; i < repeatTimes; i++) {
     let additionResult = '';
 
-    for (let j = 0; i < additionRepeatTimes; j++) {
+    for (let j = 0; j < additionRepeatTimes; j++) {
       additionResult += `${j ? additionSeparator : ''}${addition}`;
     }
 
