@@ -20,11 +20,11 @@ module.exports = {
 
 function createDreamTeam(members) {
   if (!Array.isArray(members)) return false;
-  const validNames = members.filter(item => typeof item === 'string');
-  if (validNames.length === 0) return false;
+
+  const newArr = [];
   
-  return validNames
-  .map(name => name.trim().split('')[0].toUpperCase())
-  .sort((a,b) => a.charCodeAt() - b.charCodeAt())
-  .join('');
+  members.map(name => typeof name === 'string' ? 
+  newArr.push(name.trim().split('')[0].toUpperCase()) : false);
+  
+  return newArr.sort().join('');
 }
